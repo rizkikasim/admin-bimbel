@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "nama_siswa": "Tay",
+    "tanggal_lahir": "2010-05-12",
+    "program_dipilih": "Bimbel Intensif UTBK",
+    "nama_ortu": "Bpk. Ahmad",
+    "email_ortu": "dani@mail.com",
+    "no_wa": "08123456789",
+    "upload_kk": "kk_rizki.pdf",
+    "upload_akta": "akta_rizki.pdf",
+    "alamat": "Jl. Merdeka No. 10, Bandung",
+    "status": "Verified"
+  },
+  {
+    "id": 2,
+    "nama_siswa": "Laso",
+    "tanggal_lahir": "2012-08-20",
+    "program_dipilih": "Kursus Bahasa Inggris",
+    "nama_ortu": "Ibu Siska",
+    "email_ortu": "fatimah@mail.com",
+    "no_wa": "08987654321",
+    "upload_kk": "kk_sarah.pdf",
+    "upload_akta": "akta_sarah.pdf",
+    "alamat": "Komp. Melati Blok C, Jakarta",
+    "status": "Pending"
+  },
+  {
+    "id": 3,
+    "nama_siswa": "Vuki",
+    "tanggal_lahir": "2011-03-15",
+    "program_dipilih": "Bimbel Kedinasan",
+    "nama_ortu": "Bpk. Heru",
+    "email_ortu": "heru@mail.com",
+    "no_wa": "085211223344",
+    "upload_kk": "kk_budi.pdf",
+    "upload_akta": "akta_budi.pdf",
+    "alamat": "Jl. Antapani No. 45, Bandung",
+    "status": "Verified"
+  },
+  {
+    "id": 4,
+    "nama_siswa": "May",
+    "tanggal_lahir": "2013-11-02",
+    "program_dipilih": "Private Matematika",
+    "nama_ortu": "Ibu Siska",
+    "email_ortu": "Cukmay@mail.com",
+    "no_wa": "087755667788",
+    "upload_kk": "kk_amanda.pdf",
+    "upload_akta": "akta_amanda.pdf",
+    "alamat": "Cluster Sakura No. 12, Bekasi",
+    "status": "Pending"
+  }
+]

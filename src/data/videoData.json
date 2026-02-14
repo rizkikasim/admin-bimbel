@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "kategori": "Matematika",
+    "title": "Trik Cepat Aljabar UTBK",
+    "description": "Pembahasan soal aljabar dengan metode eliminasi super cepat.",
+    "video_url": "https://youtube.com/embed/example1",
+    "thumbnail": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=400"
+  },
+  {
+    "id": 2,
+    "kategori": "Bahasa Inggris",
+    "title": "Grammar Dasar: Tenses",
+    "description": "Memahami 16 tenses dalam 10 menit untuk pemula.",
+    "video_url": "https://youtube.com/embed/example2",
+    "thumbnail": "https://images.unsplash.com/photo-1543165796-5426273eaab3?q=80&w=400"
+  }
+]

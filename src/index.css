@@ -1,0 +1,14 @@
+/* src/index.css */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: block !important; /* Menghapus flexbox default Vite */
+}
+
+#root {
+  display: block !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

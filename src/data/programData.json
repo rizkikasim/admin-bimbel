@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "kategori": "Bimbel",
+    "judul": "Bimbel Intensif UTBK",
+    "deskripsi": "Persiapan matang menghadapi ujian masuk PTN dengan bank soal terlengkap.",
+    "harga": "1.500.000",
+    "thumbnail": "https://images.unsplash.com/photo-1523240715630-979bb0a1aa0e?q=80&w=400"
+  },
+  {
+    "id": 2,
+    "kategori": "Kursus",
+    "judul": "English For Kids",
+    "deskripsi": "Belajar bahasa Inggris dengan metode fun untuk anak usia 7-12 tahun.",
+    "harga": "750.000",
+    "thumbnail": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400"
+  }
+]

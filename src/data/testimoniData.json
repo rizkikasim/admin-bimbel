@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nama": "Ibu Ratna",
+    "peran": "Orang Tua Siswa",
+    "pesan": "Anak saya jadi lebih percaya diri menghadapi ujian Matematika. Tutor di Bimbelku sangat sabar dan metodenya mudah dipahami.",
+    "foto": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "nama": "Andi Pratama",
+    "peran": "Siswa SMA 1",
+    "pesan": "Materi UTBK yang dikasih lengkap banget! Berkat Bimbelku, saya bisa lolos ke PTN impian tahun ini. Terima kasih!",
+    "foto": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "nama": "Bpk. Heru",
+    "peran": "Orang Tua Siswa",
+    "pesan": "Sistem pembayarannya mudah dengan Midtrans, dan laporan perkembangan anak selalu dikirim tepat waktu.",
+    "foto": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200",
+    "rating": 4
+  }
+]
