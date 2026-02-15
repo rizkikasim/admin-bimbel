@@ -14,5 +14,13 @@
     "description": "Memahami 16 tenses dalam 10 menit untuk pemula.",
     "video_url": "https://youtube.com/embed/example2",
     "thumbnail": "https://images.unsplash.com/photo-1543165796-5426273eaab3?q=80&w=400"
+  }, 
+  {
+    "id": 3,
+    "kategori": "Kedinasan",
+    "title": "Strategi Sukses Tes Potensi Akademik",
+    "description": "Tips dan trik menghadapi TPA untuk masuk perguruan tinggi kedinasan.",
+    "video_url": "https://youtube.com/embed/example3",
+    "thumbnail": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400"
   }
 ]

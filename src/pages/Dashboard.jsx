@@ -26,7 +26,7 @@ const Dashboard = () => {
           <DashboardCard label="Registrasi Baru" value="12" icon="bi-person-plus-fill" color="#3b82f6" />
         </Col>
         <Col xs={12} lg={4}>
-          <DashboardCard label="Pendapatan" value="Rp 15.4M" icon="bi-currency-exchange" color="#10b981" />
+          <DashboardCard label="Tutors Result " value="30" icon="bi-currency-exchange" color="#10b981" />
         </Col>
       </Row>
 

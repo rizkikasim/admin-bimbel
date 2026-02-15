@@ -5,8 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
-
-// Import Pages (Clean Code: Semua halaman dipusatkan di folder pages)
+// Import Halaman
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Registrasi from './pages/Registrasi';
@@ -15,12 +14,9 @@ import Program from './pages/Program';
 import CompanyStats from './pages/CompanyStats';
 import Payment from './pages/Payment';
 import Testimoni from './pages/Testimoni';
+import Gallery from './pages/Gallery';
 
-/**
- * App Component
- * Mengatur sistem navigasi utama untuk Bimbelku Rumah Sukses Admin Portal.
- * Menggunakan React Router Dom untuk perpindahan halaman yang cepat dan responsif.
- */
+
 function App() {
   return (
     <Router>
@@ -34,7 +30,8 @@ function App() {
         {/* Halaman Registrasi: Manajemen Data Calon Siswa Baru */}
         <Route path="/registrasi" element={<Registrasi />} />
         
-        {/* --- Redirect Logics --- */}
+        {/* Halaman Gallery: Manajemen Konten Galeri Foto (Placeholder) */}
+       <Route path="/gallery" element={<Gallery />} />
         
         {/* Jika user mengakses root domain, arahkan otomatis ke login */}
         <Route path="/" element={<Navigate to="/login" />} />

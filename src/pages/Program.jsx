@@ -10,9 +10,9 @@ const Program = () => {
   return (
     <AdminLayout title="Manajemen Program">
       <Row className="g-4">
-        {/* KOLOM KIRI: FORM INPUT PROGRAM */}
+        {/* KOLOM KIRI: FORM INPUT PROGRAM (STICKY) */}
         <Col lg={4}>
-          <div className="card-premium animate__animated animate__fadeIn">
+          <div className="card-premium animate__animated animate__fadeIn sticky-top" style={{ top: '20px', zIndex: 10 }}>
             <h6 className="fw-bold mb-3">
               <i className="bi bi-plus-square-fill me-2 text-rs-orange"></i>Tambah Program Baru
             </h6>
@@ -66,14 +66,14 @@ const Program = () => {
                 <input type="text" className="search-input ps-3" placeholder="Contoh: 1.500.000" />
               </Form.Group>
 
-              <Button className="btn-rs-primary w-100 py-2">
+              <Button className="btn-rs-primary w-100 py-2" style={{ backgroundColor: '#F97316', border: 'none' }}>
                 <i className="bi bi-save-fill me-2"></i>Simpan Program
               </Button>
             </Form>
           </div>
         </Col>
 
-        {/* KOLOM KANAN: DAFTAR PROGRAM */}
+        {/* KOLOM KANAN: DAFTAR PROGRAM (SCROLLABLE AREA) */}
         <Col lg={8}>
           <div className="card-premium h-auto">
             <div className="d-flex justify-content-between align-items-center mb-4">
@@ -84,44 +84,47 @@ const Program = () => {
               </div>
             </div>
 
-            <Row className="g-3">
-              {programs.map((prog) => (
-                <Col md={6} key={prog.id}>
-                  <Card className="border-0 shadow-sm overflow-hidden h-100" style={{ borderRadius: '5px' }}>
-                    <div className="position-relative">
-                      <img 
-                        src={prog.thumbnail} 
-                        className="card-img-top" 
-                        alt={prog.judul} 
-                        style={{ height: '160px', objectFit: 'cover' }} 
-                      />
-                      <span className="position-absolute top-0 start-0 m-2 badge bg-rs-orange" style={{ borderRadius: '5px' }}>
-                        {prog.kategori}
-                      </span>
-                    </div>
-                    <Card.Body className="p-3">
-                      <div className="d-flex justify-content-between align-items-start mb-2">
-                        <h6 className="fw-bold text-dark mb-0 pe-2">{prog.judul}</h6>
-                        <span className="text-rs-orange fw-bold small">
-                          Rp {prog.harga}
+            {/* Area scroll khusus daftar program */}
+            <div style={{ maxHeight: 'calc(100vh - 200px)', overflowY: 'auto', overflowX: 'hidden', paddingRight: '10px' }}>
+              <Row className="g-3">
+                {programs.map((prog) => (
+                  <Col md={6} key={prog.id}>
+                    <Card className="border-0 shadow-sm overflow-hidden h-100" style={{ borderRadius: '5px' }}>
+                      <div className="position-relative">
+                        <img 
+                          src={prog.thumbnail} 
+                          className="card-img-top" 
+                          alt={prog.judul} 
+                          style={{ height: '160px', objectFit: 'cover' }} 
+                        />
+                        <span className="position-absolute top-0 start-0 m-2 badge" style={{ backgroundColor: '#F97316', borderRadius: '5px' }}>
+                          {prog.kategori}
                         </span>
                       </div>
-                      <p className="text-muted small mb-3" style={{ height: '40px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: '2', WebkitBoxOrient: 'vertical' }}>
-                        {prog.deskripsi}
-                      </p>
-                      <div className="d-flex gap-2">
-                        <Button variant="outline-primary" className="btn-sm flex-grow-1" style={{ borderRadius: '5px', fontSize: '0.75rem' }}>
-                          <i className="bi bi-pencil-square me-1"></i> Edit
-                        </Button>
-                        <Button variant="outline-danger" className="btn-sm" style={{ borderRadius: '5px' }}>
-                          <i className="bi bi-trash"></i>
-                        </Button>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
+                      <Card.Body className="p-3">
+                        <div className="d-flex justify-content-between align-items-start mb-2">
+                          <h6 className="fw-bold text-dark mb-0 pe-2" style={{ fontSize: '0.9rem' }}>{prog.judul}</h6>
+                          <span className="fw-bold small" style={{ color: '#F97316' }}>
+                            Rp {prog.harga}
+                          </span>
+                        </div>
+                        <p className="text-muted small mb-3" style={{ height: '40px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: '2', WebkitBoxOrient: 'vertical' }}>
+                          {prog.deskripsi}
+                        </p>
+                        <div className="d-flex gap-2">
+                          <Button variant="outline-primary" className="btn-sm flex-grow-1" style={{ borderRadius: '5px', fontSize: '0.75rem' }}>
+                            <i className="bi bi-pencil-square me-1"></i> Edit
+                          </Button>
+                          <Button variant="outline-danger" className="btn-sm" style={{ borderRadius: '5px' }}>
+                            <i className="bi bi-trash"></i>
+                          </Button>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </div>
           </div>
         </Col>
       </Row>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'; // Import navigasi
+import { useNavigate } from 'react-router-dom';
 import CustomInput from '../components/CustomInput';
 
 const Login = () => {
@@ -11,18 +11,12 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(''); // Reset error setiap mencoba login
+    setError('');
 
     // Logika Login Sederhana (Simulasi)
-    // Email khusus sesuai keinginanmu
     if (email === 'admin@rumahsukses.com' && password === 'admin123') {
-      console.log("Login Berhasil!");
-      
-      // Simpan status login di localStorage agar tidak hilang saat refresh
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('adminEmail', email);
-      
-      // Arahkan ke Dashboard
       navigate('/dashboard');
     } else {
       setError('Email atau password salah. Silakan coba lagi.');
@@ -36,12 +30,20 @@ const Login = () => {
           <Col xs={11} sm={9} md={7} lg={5} xl={4}>
             <Card className="login-card p-3 shadow-sm mt-5">
               <Card.Body>
-                {/* Logo & Header tetap sama seperti sebelumnya */}
-                <div className="logo-wrapper">
-                  <div className="text-center" style={{ lineHeight: '1.1' }}>
-                    <span className="fw-bold d-block text-rs-orange" style={{ fontSize: '0.75rem' }}>Bimbelku</span>
-                    <span className="text-dark" style={{ fontSize: '0.55rem', fontWeight: '500' }}>Rumah-Sukses</span>
-                  </div>
+                {/* BAGIAN LOGO: Diletakkan paling atas dan dicenterkan */}
+                <div className="text-center mb-4">
+                  <img 
+                    src="public/assets/logo.jpeg" 
+                    alt="Logo Bimbelku" 
+                    className="mb-3 shadow-sm"
+                    style={{ 
+                      width: '75px', 
+                      height: '75px', 
+                      objectFit: 'cover', 
+                      borderRadius: '5px',
+                      border: '2px solid #f8fafc'
+                    }} 
+                  />
                 </div>
 
                 <div className="text-center mb-4">
@@ -56,7 +58,6 @@ const Login = () => {
                   <p className="welcome-text mb-0">Silakan masukkan kredensial admin Anda untuk melanjutkan.</p>
                 </div>
 
-                {/* Tampilkan pesan error jika login gagal */}
                 {error && (
                   <div className="alert alert-danger py-2 px-3 small text-center mb-3" style={{ borderRadius: '10px', fontSize: '0.8rem' }}>
                     {error}
@@ -84,10 +85,10 @@ const Login = () => {
 
                   <div className="d-flex justify-content-between align-items-center mb-4">
                     <Form.Check type="checkbox" label="Ingat saya" style={{ fontSize: '0.8rem' }} />
-                    <a href="#" className="text-rs-orange text-decoration-none fw-semibold" style={{ fontSize: '0.8rem' }}>Forgot Password?</a>
+                    <a href="#" className="text-rs-orange text-decoration-none fw-semibold" style={{ fontSize: '0.8rem', color: '#f97316' }}>Forgot Password?</a>
                   </div>
 
-                  <Button type="submit" className="w-100 btn-login mb-4">
+                  <Button type="submit" className="w-100 btn-login mb-4" style= {{ backgroundColor: '#f97316', border: 'none', fontSize: '1rem', padding: '10px' }}>
                     Login →
                   </Button>
 

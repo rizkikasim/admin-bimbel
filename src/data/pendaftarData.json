@@ -9,8 +9,7 @@
     "no_wa": "08123456789",
     "upload_kk": "kk_rizki.pdf",
     "upload_akta": "akta_rizki.pdf",
-    "alamat": "Jl. Merdeka No. 10, Bandung",
-    "status": "Verified"
+    "alamat": "Jl. Merdeka No. 10, Bandung"
   },
   {
     "id": 2,
@@ -22,8 +21,7 @@
     "no_wa": "08987654321",
     "upload_kk": "kk_sarah.pdf",
     "upload_akta": "akta_sarah.pdf",
-    "alamat": "Komp. Melati Blok C, Jakarta",
-    "status": "Pending"
+    "alamat": "Komp. Melati Blok C, Jakarta"
   },
   {
     "id": 3,
@@ -35,8 +33,7 @@
     "no_wa": "085211223344",
     "upload_kk": "kk_budi.pdf",
     "upload_akta": "akta_budi.pdf",
-    "alamat": "Jl. Antapani No. 45, Bandung",
-    "status": "Verified"
+    "alamat": "Jl. Antapani No. 45, Bandung"
   },
   {
     "id": 4,
@@ -48,7 +45,6 @@
     "no_wa": "087755667788",
     "upload_kk": "kk_amanda.pdf",
     "upload_akta": "akta_amanda.pdf",
-    "alamat": "Cluster Sakura No. 12, Bekasi",
-    "status": "Pending"
+    "alamat": "Cluster Sakura No. 12, Bekasi"
   }
 ]

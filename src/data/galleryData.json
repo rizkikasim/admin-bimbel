@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Kegiatan Belajar Intensif",
+    "description": "Suasana belajar fokus persiapan UTBK di kelas eksekutif.",
+    "image": "https://images.unsplash.com/photo-1523240715632-d984bb4b9156?q=80&w=800"
+  },
+  {
+    "id": 2,
+    "title": "Workshop Motivasi Siswa",
+    "description": "Sesi berbagi pengalaman bersama alumni yang lolos PTN favorit.",
+    "image": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800"
+  },
+  {
+    "id": 3,
+    "title": "Fasilitas Lab Komputer",
+    "description": "Ruang komputer modern untuk latihan simulasi ujian berbasis komputer.",
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800"
+  },
+  {
+    "id": 4,
+    "title": "Sesi Konsultasi Privat",
+    "description": "Tutor mendampingi siswa secara personal untuk materi sulit.",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800"
+  }
+]
