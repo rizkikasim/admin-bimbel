@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import AdminLayout from '../layouts/AdminLayout';
+import AdminLayout from '../../layouts/AdminLayout';
 
 const DashboardCard = ({ label, value, icon, color }) => (
   <div className="card-premium d-flex align-items-center justify-content-between p-4">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Badge, Row, Col, Button } from 'react-bootstrap';
-import AdminLayout from '../layouts/AdminLayout';
-import paymentData from '../data/paymentData.json';
+import AdminLayout from '../../layouts/AdminLayout';
+import paymentData from '../../data/paymentData.json';
 
 const Payment = () => {
   // Fungsi untuk menentukan warna status transaksi

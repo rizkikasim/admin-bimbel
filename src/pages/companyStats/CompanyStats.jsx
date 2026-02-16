@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Form, Button } from 'react-bootstrap';
-import AdminLayout from '../layouts/AdminLayout';
-import statsData from '../data/statsData.json'; // Import JSON langsung tanpa kurung kurawal
+import AdminLayout from '../../layouts/AdminLayout';
+import statsData from '../../data/statsData.json'; // Import JSON langsung tanpa kurung kurawal
 
 const CompanyStats = () => {
   return (

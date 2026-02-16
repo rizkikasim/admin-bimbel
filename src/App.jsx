@@ -5,54 +5,35 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
-// Import Halaman
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Registrasi from './pages/Registrasi';
-import VideoPembelajaran from './pages/VideoPembelajaran';
-import Program from './pages/Program';
-import CompanyStats from './pages/CompanyStats';
-import Payment from './pages/Payment';
-import Testimoni from './pages/Testimoni';
-import Gallery from './pages/Gallery';
 
+// --- PERBAIKAN IMPORT SESUAI STRUKTUR FOLDER BARU ---
+import Login from './pages/Login';
+import Dashboard from './pages/dashboard/Dashboard';
+import Registrasi from './pages/Registrasi/Registrasi'; // Perbaikan: Langsung di folder Registrasi
+import VideoPembelajaran from './pages/VidioPembelajaran/VideoPembelajaran';
+import Program from './pages/Program/Program';
+import CompanyStats from './pages/companyStats/CompanyStats'; // Menggunakan huruf kecil 'c' sesuai folder
+import Payment from './pages/Payment/Payment';
+import Testimoni from './pages/Testimoni/Testimoni';
+import Gallery from './pages/Gallery/Gallery';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Halaman Awal: Login Admin Portal */}
         <Route path="/login" element={<Login />} />
-        
-        {/* Halaman Dashboard: Overview Statistik Bimbel */}
         <Route path="/dashboard" element={<Dashboard />} />
-
-        {/* Halaman Registrasi: Manajemen Data Calon Siswa Baru */}
         <Route path="/registrasi" element={<Registrasi />} />
-        
-        {/* Halaman Gallery: Manajemen Konten Galeri Foto (Placeholder) */}
-       <Route path="/gallery" element={<Gallery />} />
-        
-        {/* Jika user mengakses root domain, arahkan otomatis ke login */}
-        <Route path="/" element={<Navigate to="/login" />} />
-        
-        {/* Jika user mengetik alamat yang tidak terdaftar, kembalikan ke login (Safety Net) */}
-        <Route path="*" element={<Navigate to="/login" />} />
-
-        {/* Halaman Video Pembelajaran: Manajemen Konten Video */}
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/video" element={<VideoPembelajaran />} />
-
-        {/* Halaman Program: Manajemen Program Bimbel */} 
         <Route path="/program" element={<Program />} />
-
-        {/* Halaman Statistik Perusahaan: Data Statistik Lengkap */}
         <Route path="/stats" element={<CompanyStats />} />
-
-        {/* Halaman Payment: Manajemen Pembayaran (Placeholder) */}
         <Route path="/payment" element={<Payment />} />
-
-        {/* Halaman Testimoni: Manajemen Testimoni (Placeholder) */}
-        <Route path="/testimoni" element={<div className="p-4"><h2>Testimoni Management</h2><p>Fitur ini sedang dalam pengembangan.</p></div>} />
+        <Route path="/testimoni" element={<Testimoni />} />
+        
+        {/* Safety Redirects */}
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
   );

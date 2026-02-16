@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Row, Col, Form, Button, Card } from 'react-bootstrap';
-import AdminLayout from '../layouts/AdminLayout';
-import galleryData from '../data/galleryData.json'; // Pastikan file JSON sudah ada
+import AdminLayout from '../../layouts/AdminLayout';
+import { useGalleryLogic } from './useGalleryLogic';
+import EditGalleryModal from './EditGalleryModal';
 
 const Gallery = () => {
-  const [galleries] = useState(galleryData);
+  const { 
+    searchTerm, setSearchTerm, filteredGalleries, 
+    deleteItem, startEdit, showEditModal, 
+    selectedItem, closeEditModal 
+  } = useGalleryLogic();
 
   return (
     <AdminLayout title="Manajemen Gallery">
@@ -28,7 +33,7 @@ const Gallery = () => {
                   <label htmlFor="upload-gallery-photo" className="w-100 mb-0">
                     <div className="text-center p-3 border-dashed rounded-3 bg-light-orange" 
                          style={{ cursor: 'pointer', border: '2px dashed #F97316', borderRadius: '5px' }}>
-                      <i className="bi bi-cloud-arrow-up-fill text-rs-orange fs-4"></i>
+                      <i className="bi bi-cloud-arrow-up-fill text-rs-orange fs-4" style={{ color: '#F97316' }}></i>
                       <p className="small mb-0 text-muted mt-1">Klik untuk pilih foto</p>
                     </div>
                   </label>
@@ -59,16 +64,21 @@ const Gallery = () => {
               <h6 className="fw-bold mb-0">Koleksi Foto Bimbelku</h6>
               <div className="search-wrapper" style={{ width: '250px' }}>
                 <i className="bi bi-search"></i>
-                <input type="text" className="search-input" placeholder="Cari foto..." />
+                <input 
+                  type="text" 
+                  className="search-input" 
+                  placeholder="Cari foto..." 
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
               </div>
             </div>
 
-            {/* AREA SCROLL MANDIRI */}
             <div style={{ maxHeight: 'calc(100vh - 200px)', overflowY: 'auto', overflowX: 'hidden', paddingRight: '10px' }}>
               <Row className="g-3">
-                {galleries.map((item) => (
+                {filteredGalleries.map((item) => (
                   <Col md={6} key={item.id}>
-                    <Card className="border-0 shadow-sm overflow-hidden h-100" style={{ borderRadius: '5px' }}>
+                    <Card className="border-0 shadow-sm overflow-hidden h-100" style={{ borderRadius: '10px' }}>
                       <div className="position-relative">
                         <img 
                           src={item.image} 
@@ -83,11 +93,27 @@ const Gallery = () => {
                           {item.description}
                         </p>
                         <div className="d-flex gap-2 pt-2 border-top">
-                          <Button variant="light" className="btn-sm flex-grow-1 text-primary fw-bold" style={{ fontSize: '0.7rem' }}>
+                          <Button 
+                            variant="light" 
+                            className="btn-sm flex-grow-1 text-primary fw-bold" 
+                            style={{ fontSize: '0.75rem' }}
+                            onClick={() => startEdit(item)}
+                          >
                             <i className="bi bi-pencil-square me-1"></i> Edit
                           </Button>
-                          <Button variant="light" className="btn-sm text-danger" style={{ backgroundColor: '#fff1f2' }}>
-                            <i className="bi bi-trash"></i>
+                          <Button 
+                            variant="light" 
+                            className="btn-sm d-flex align-items-center justify-content-center" 
+                            style={{ 
+                              borderRadius: '5px', 
+                              backgroundColor: '#fff1f2', 
+                              border: 'none',
+                              width: '32px', 
+                              height: '32px'
+                            }} 
+                            onClick={() => deleteItem(item.id)}
+                          >
+                            <i className="bi bi-trash3-fill text-danger" style={{ fontSize: '0.9rem' }}></i>
                           </Button>
                         </div>
                       </Card.Body>
@@ -99,6 +125,13 @@ const Gallery = () => {
           </div>
         </Col>
       </Row>
+
+      {/* Modal Edit Gallery */}
+      <EditGalleryModal 
+        show={showEditModal} 
+        handleClose={closeEditModal} 
+        itemData={selectedItem} 
+      />
     </AdminLayout>
   );
 };

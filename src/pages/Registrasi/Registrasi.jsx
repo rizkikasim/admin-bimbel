@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'react-bootstrap';
-import AdminLayout from '../layouts/AdminLayout';
-import pendaftarData from '../data/pendaftarData.json'; // Import data terpisah
+import AdminLayout from '../../layouts/AdminLayout';
+import pendaftarData from '../../data/pendaftarData.json'; // Import data terpisah
 import * as XLSX from 'xlsx';
 
 const Registrasi = () => {
