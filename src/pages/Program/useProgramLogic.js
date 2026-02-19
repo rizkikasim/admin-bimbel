@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import initialProgramData from '../../data/programData.json';
 
 export const useProgramLogic = () => {
-  const [programs, setPrograms] = useState(initialProgramData);
+  // Pastikan data awal adalah array untuk mencegah error .filter
+  const [programs, setPrograms] = useState(Array.isArray(initialProgramData) ? initialProgramData : []);
   const [searchTerm, setSearchTerm] = useState('');
   const [showEditModal, setShowEditModal] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
@@ -23,8 +24,9 @@ export const useProgramLogic = () => {
     }
   };
 
+  // Filter dengan pengamanan data
   const filteredPrograms = programs.filter((prog) =>
-    prog.judul.toLowerCase().includes(searchTerm.toLowerCase())
+    (prog.judul || "").toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return { 

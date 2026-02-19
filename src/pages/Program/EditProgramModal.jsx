@@ -1,45 +1,90 @@
 import React from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 
 const EditProgramModal = ({ show, handleClose, programData }) => {
   if (!programData) return null;
 
   return (
-    <Modal show={show} onHide={handleClose} centered size="md">
+    <Modal show={show} onHide={handleClose} centered size="lg">
       <Modal.Header closeButton className="border-0 pb-0">
-        <Modal.Title className="fw-bold fs-5">Edit Program</Modal.Title>
+        <Modal.Title className="fw-bold fs-5">Edit Detail Program</Modal.Title>
       </Modal.Header>
       <Modal.Body className="pt-3">
         <Form>
-          <Form.Group className="mb-3">
-            <Form.Label className="small fw-bold text-muted">Judul Program</Form.Label>
-            <Form.Control 
-              type="text" 
-              defaultValue={programData.judul} 
-              className="py-2"
-              style={{ borderRadius: '8px' }}
-            />
-          </Form.Group>
+          <Row>
+            {/* INPUT KATEGORI & JUDUL */}
+            <Col md={6}>
+              <Form.Group className="mb-3">
+                <Form.Label className="small fw-bold text-muted">Kategori Program</Form.Label>
+                <Form.Select 
+                  defaultValue={programData.kategori} 
+                  style={{ borderRadius: '8px' }}
+                >
+                  <option value="Bimbel">Bimbel</option>
+                  <option value="Kursus">Kursus</option>
+                  <option value="Private">Private</option>
+                </Form.Select>
+              </Form.Group>
+            </Col>
+            <Col md={6}>
+              <Form.Group className="mb-3">
+                <Form.Label className="small fw-bold text-muted">Judul Program</Form.Label>
+                <Form.Control 
+                  type="text" 
+                  defaultValue={programData.judul} 
+                  style={{ borderRadius: '8px' }}
+                />
+              </Form.Group>
+            </Col>
+          </Row>
 
-          <Form.Group className="mb-3">
-            <Form.Label className="small fw-bold text-muted">Harga (Rp)</Form.Label>
-            <Form.Control 
-              type="text" 
-              defaultValue={programData.harga} 
-              className="py-2"
-              style={{ borderRadius: '8px' }}
-            />
-          </Form.Group>
+          <Row>
+            {/* INPUT BIAYA DAFTAR & DESKRIPSI */}
+            <Col md={6}>
+              <Form.Group className="mb-3">
+                <Form.Label className="small fw-bold text-muted">Biaya Pendaftaran (Rp)</Form.Label>
+                <Form.Control 
+                  type="text" 
+                  defaultValue={programData.biayaPendaftaran} 
+                  style={{ borderRadius: '8px' }}
+                />
+              </Form.Group>
+            </Col>
+            <Col md={6}>
+              <Form.Group className="mb-3">
+                <Form.Label className="small fw-bold text-muted">Deskripsi Singkat</Form.Label>
+                <Form.Control 
+                  as="textarea" 
+                  rows={1} 
+                  defaultValue={programData.deskripsi} 
+                  style={{ borderRadius: '8px', resize: 'none' }}
+                />
+              </Form.Group>
+            </Col>
+          </Row>
 
-          <Form.Group className="mb-3">
-            <Form.Label className="small fw-bold text-muted">Deskripsi</Form.Label>
-            <Form.Control 
-              as="textarea" 
-              rows={3} 
-              defaultValue={programData.deskripsi} 
-              style={{ borderRadius: '8px', resize: 'none' }}
-            />
-          </Form.Group>
+          {/* SECTION SETTING HARGA PER GRADE */}
+          <div className="p-3 rounded-3 mb-3" style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }}>
+            <div className="small fw-bold text-dark mb-3">Update Harga per Grade</div>
+            <Row className="g-3">
+              <Col md={6}>
+                <Form.Label className="small text-muted mb-1">Grade I-III (Rp)</Form.Label>
+                <Form.Control type="text" defaultValue={programData.grades?.[0]?.harga} size="sm" />
+              </Col>
+              <Col md={6}>
+                <Form.Label className="small text-muted mb-1">Grade IV-VII (Rp)</Form.Label>
+                <Form.Control type="text" defaultValue={programData.grades?.[1]?.harga} size="sm" />
+              </Col>
+              <Col md={6}>
+                <Form.Label className="small text-muted mb-1">Grade VIII-IX (Rp)</Form.Label>
+                <Form.Control type="text" defaultValue={programData.grades?.[2]?.harga} size="sm" />
+              </Col>
+              <Col md={6}>
+                <Form.Label className="small text-muted mb-1">Grade X–XI (Rp)</Form.Label>
+                <Form.Control type="text" defaultValue={programData.grades?.[3]?.harga} size="sm" />
+              </Col>
+            </Row>
+          </div>
 
           <Form.Group className="mb-2">
             <Form.Label className="small fw-bold text-muted">Ganti Thumbnail</Form.Label>
@@ -51,9 +96,6 @@ const EditProgramModal = ({ show, handleClose, programData }) => {
                 className="border-0 bg-transparent"
               />
             </div>
-            <Form.Text className="text-muted" style={{ fontSize: '0.7rem' }}>
-              Kosongkan jika tidak ingin mengubah gambar.
-            </Form.Text>
           </Form.Group>
         </Form>
       </Modal.Body>

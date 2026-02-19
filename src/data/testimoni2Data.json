@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nama": "Salsa Putri",
+    "universitas": "Universitas Negeri Jakarta - Teknik Informatika",
+    "nilaiUtbk": 720,
+    "pesan": "Materinya terstruktur dan latihan soalnya sangat membantu saya memahami konsep UTBK dengan lebih baik.",
+    "foto": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&h=200&auto=format&fit=crop"
+  },
+  {
+    "id": 2,
+    "nama": "Andi Pratama",
+    "universitas": "Universitas Indonesia - Hukum",
+    "nilaiUtbk": 695,
+    "pesan": "Sangat terbantu dengan pendampingan mentor yang sabar dalam menjelaskan materi yang sulit.",
+    "foto": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=200&auto=format&fit=crop"
+  }
+]

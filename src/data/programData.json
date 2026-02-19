@@ -1,43 +1,72 @@
 [
   {
     "id": 1,
+    "judul": "Mathematics Intensive",
     "kategori": "Bimbel",
-    "judul": "Bimbel Intensif UTBK",
-    "deskripsi": "Persiapan matang menghadapi ujian masuk PTN dengan bank soal terlengkap.",
-    "harga": "1.500.000",
-    "thumbnail": "public/assets/Computer.png"
+    "deskripsi": "Pendalaman konsep matematika dasar hingga tingkat lanjut untuk persiapan ujian.",
+    "biayaPendaftaran": "300.000",
+    "thumbnail": "https://img.freepik.com/free-vector/math-education-background-with-formula_53876-115999.jpg",
+    "grades": [
+      { "grade": "Grade I-III", "harga": "1.050.000" },
+      { "grade": "Grade IV-VII", "harga": "1.200.000" },
+      { "grade": "Grade VIII-IX", "harga": "1.250.000" },
+      { "grade": "Grade X–XI", "harga": "1.400.000" }
+    ]
   },
   {
     "id": 2,
-    "kategori": "Kursus",
-    "judul": "English For Kids",
-    "deskripsi": "Belajar bahasa Inggris dengan metode fun untuk anak usia 7-12 tahun.",
-    "harga": "750.000",
-    "thumbnail": "public/assets/Calistung.png"
-  },
-
-  {
-    "id": 2,
-    "kategori": "Kursus",
-    "judul": "English For Kids",
-    "deskripsi": "Belajar bahasa Inggris dengan metode fun untuk anak usia 7-12 tahun.",
-    "harga": "750.000",
-    "thumbnail": "public/assets/EnglishKids.png"
+    "judul": "Science Adventure",
+    "kategori": "Bimbel",
+    "deskripsi": "Eksplorasi materi IPA, Biologi, dan Fisika dengan metode praktikum sederhana.",
+    "biayaPendaftaran": "250.000",
+    "thumbnail": "https://img.freepik.com/free-vector/science-education-background_23-2148486928.jpg",
+    "grades": [
+      { "grade": "Grade I-III", "harga": "950.000" },
+      { "grade": "Grade IV-VII", "harga": "1.100.000" },
+      { "grade": "Grade VIII-IX", "harga": "1.150.000" },
+      { "grade": "Grade X–XI", "harga": "1.300.000" }
+    ]
   },
   {
     "id": 3,
-    "kategori": "Bimbel",
-    "judul": "Bimbel Kedinasan",
-    "deskripsi": "Persiapan khusus untuk masuk perguruan tinggi kedinasan dengan materi yang terfokus.",
-    "harga": "1.200.000",
-    "thumbnail": "public/assets/EnglishTee.png"
+    "judul": "English Academic",
+    "kategori": "Kursus",
+    "deskripsi": "Fokus pada Grammar, Writing, dan Speaking untuk kebutuhan akademik sekolah.",
+    "biayaPendaftaran": "350.000",
+    "thumbnail": "https://img.freepik.com/free-vector/english-book-background-design_23-2149483336.jpg",
+    "grades": [
+      { "grade": "Grade I-III", "harga": "800.000" },
+      { "grade": "Grade IV-VII", "harga": "900.000" },
+      { "grade": "Grade VIII-IX", "harga": "1.000.000" },
+      { "grade": "Grade X–XI", "harga": "1.200.000" }
+    ]
   },
   {
     "id": 4,
+    "judul": "Coding for Kids",
     "kategori": "Private",
-    "judul": "Private Matematika",
-    "deskripsi": "Les privat matematika untuk semua jenjang dengan tutor berpengalaman.",
-    "harga": "500.000",
-    "thumbnail": "public/assets/Mandarin.png"
+    "deskripsi": "Belajar logika pemrograman dasar menggunakan Scratch dan Python.",
+    "biayaPendaftaran": "500.000",
+    "thumbnail": "https://img.freepik.com/free-vector/kids-discussing-about-code-vector_53876-173167.jpg",
+    "grades": [
+      { "grade": "Grade I-III", "harga": "1.500.000" },
+      { "grade": "Grade IV-VII", "harga": "1.750.000" },
+      { "grade": "Grade VIII-IX", "harga": "2.000.000" },
+      { "grade": "Grade X–XI", "harga": "2.200.000" }
+    ]
+  },
+  {
+    "id": 5,
+    "judul": "Tahfidz & Arabic",
+    "kategori": "Kursus",
+    "deskripsi": "Program menghafal Al-Qur'an dan dasar-dasar percakapan Bahasa Arab.",
+    "biayaPendaftaran": "200.000",
+    "thumbnail": "https://img.freepik.com/free-vector/arabic-calligraphy-background_23-2148817208.jpg",
+    "grades": [
+      { "grade": "Grade I-III", "harga": "500.000" },
+      { "grade": "Grade IV-VII", "harga": "600.000" },
+      { "grade": "Grade VIII-IX", "harga": "700.000" },
+      { "grade": "Grade X–XI", "harga": "850.000" }
+    ]
   }
 ]

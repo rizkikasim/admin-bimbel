@@ -6,16 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 
-// --- PERBAIKAN IMPORT SESUAI STRUKTUR FOLDER BARU ---
+// Import Halaman Utama
 import Login from './pages/Login';
 import Dashboard from './pages/dashboard/Dashboard';
-import Registrasi from './pages/Registrasi/Registrasi'; // Perbaikan: Langsung di folder Registrasi
+import Registrasi from './pages/Registrasi/Registrasi';
 import VideoPembelajaran from './pages/VidioPembelajaran/VideoPembelajaran';
 import Program from './pages/Program/Program';
-import CompanyStats from './pages/companyStats/CompanyStats'; // Menggunakan huruf kecil 'c' sesuai folder
+import CompanyStats from './pages/companyStats/CompanyStats';
 import Payment from './pages/Payment/Payment';
-import Testimoni from './pages/Testimoni/Testimoni';
 import Gallery from './pages/Gallery/Gallery';
+import Testimoni from './pages/Testimoni/Testimoni';
+
+// --- TAMBAHKAN IMPORT INI (Penyebab Error) ---
+import Testimoni2 from './pages/Testimoni2/Testimoni2'; 
 
 function App() {
   return (
@@ -24,14 +27,17 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/registrasi" element={<Registrasi />} />
-        <Route path="/gallery" element={<Gallery />} />
         <Route path="/video" element={<VideoPembelajaran />} />
         <Route path="/program" element={<Program />} />
-        <Route path="/stats" element={<CompanyStats />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/stats" element={<CompanyStats />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/testimoni" element={<Testimoni />} />
-        
-        {/* Safety Redirects */}
+
+        {/* --- ROUTE TESTIMONI ALUMNI --- */}
+        <Route path="/testimoni2" element={<Testimoni2 />} />
+
+        {/* Safety Net */}
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
