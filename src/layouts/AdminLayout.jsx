@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { clearAuthStorage, getAdminUsername } from '../utils/auth';
 
 const AdminLayout = ({ children, title }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const adminUsername = getAdminUsername();
 
   // Fungsi untuk mengecek menu aktif
   const isActive = (path) => location.pathname === path;
@@ -25,6 +27,11 @@ const AdminLayout = ({ children, title }) => {
     color: isActive(path) ? '#F97316' : '#94a3b8',
     marginRight: '16px'
   });
+
+  const handleLogout = () => {
+    clearAuthStorage();
+    navigate('/login', { replace: true });
+  };
 
   return (
     <div className="d-flex" style={{ minHeight: '100vh', backgroundColor: '#F8FAFC' }}>
@@ -52,9 +59,6 @@ const AdminLayout = ({ children, title }) => {
           </div>
 
           <div className="menu-label px-3 small fw-bold text-muted mb-3 mt-4" style={{ fontSize: '0.65rem', letterSpacing: '1.2px' }}>AKADEMIK</div>
-          <div onClick={() => navigate('/registrasi')} className="d-flex align-items-center mb-1" style={navItemStyle('/registrasi')}>
-            <i className="bi bi-person-plus-fill" style={iconStyle('/registrasi')}></i> <span>Registrasi</span>
-          </div>
           <div onClick={() => navigate('/video')} className="d-flex align-items-center mb-1" style={navItemStyle('/video')}>
             <i className="bi bi-play-circle-fill" style={iconStyle('/video')}></i> <span>Video Belajar</span>
           </div>
@@ -77,12 +81,9 @@ const AdminLayout = ({ children, title }) => {
           <div onClick={() => navigate('/testimoni')} className="d-flex align-items-center mb-1" style={navItemStyle('/testimoni')}>
             <i className="bi bi-chat-left-heart-fill" style={iconStyle('/testimoni')}></i> <span>Testimoni</span>
           </div>
-          <div onClick={() => navigate('/testimoni2')} className="d-flex align-items-center mb-2" style={navItemStyle('/testimoni2')}>
-            <i className="bi bi-mortarboard-fill" style={iconStyle('/testimoni2')}></i> <span>Testimoni Alumni</span>
-          </div>
 
           <div className="border-top mt-4 pt-3">
-            <div onClick={() => navigate('/login')} className="d-flex align-items-center text-danger px-3 py-2 fw-bold" style={{ cursor: 'pointer', fontSize: '0.85rem' }}>
+            <div onClick={handleLogout} className="d-flex align-items-center text-danger px-3 py-2 fw-bold" style={{ cursor: 'pointer', fontSize: '0.85rem' }}>
               <i className="bi bi-box-arrow-right me-3 fs-5"></i> <span>Keluar</span>
             </div>
           </div>
@@ -96,7 +97,7 @@ const AdminLayout = ({ children, title }) => {
             <h5 className="fw-bold mb-0 text-dark" style={{ letterSpacing: '-0.5px' }}>{title}</h5>
             <div className="d-flex align-items-center">
               <div className="me-3 text-end d-none d-md-block">
-                <div className="fw-bold small mb-0" style={{ color: '#1e293b' }}>Rizki Kasim</div>
+                <div className="fw-bold small mb-0" style={{ color: '#1e293b' }}>{adminUsername}</div>
                 <small className="fw-bold" style={{ fontSize: '0.65rem', color: '#F97316' }}>SUPER ADMIN</small>
               </div>
               <div className="position-relative d-inline-block bg-white shadow-sm p-1" style={{ borderRadius: '10px', border: '1px solid #f1f5f9' }}>

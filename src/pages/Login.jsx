@@ -1,25 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CustomInput from '../components/CustomInput';
+import { api } from '../utils/api';
+import { hasActiveSession } from '../utils/auth';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (hasActiveSession()) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [navigate]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setLoading(true);
 
-    // Logika Login Sederhana (Simulasi)
-    if (email === 'admin@rumahsukses.com' && password === 'admin123') {
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('adminEmail', email);
-      navigate('/dashboard');
-    } else {
-      setError('Email atau password salah. Silakan coba lagi.');
+    try {
+      const data = await api.post('/admin/login', { username, password });
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('admin', JSON.stringify(data.admin));
+      navigate('/dashboard', { replace: true });
+    } catch (err) {
+      setError(err.message || 'Email atau password salah. Silakan coba lagi.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -30,7 +42,6 @@ const Login = () => {
           <Col xs={11} sm={9} md={7} lg={5} xl={4}>
             <Card className="login-card p-3 shadow-sm mt-5">
               <Card.Body>
-                {/* BAGIAN LOGO: Diletakkan paling atas dan dicenterkan */}
                 <div className="text-center mb-4">
                   <img 
                     src="public/assets/logo.jpeg" 
@@ -66,11 +77,11 @@ const Login = () => {
 
                 <Form onSubmit={handleSubmit}>
                   <CustomInput 
-                    label="Admin Email" 
-                    type="email" 
-                    placeholder="admin@rumahsukses.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    label="Username" 
+                    type="text" 
+                    placeholder="admin"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                   />
                   
@@ -88,8 +99,13 @@ const Login = () => {
                     <a href="#" className="text-rs-orange text-decoration-none fw-semibold" style={{ fontSize: '0.8rem', color: '#f97316' }}>Forgot Password?</a>
                   </div>
 
-                  <Button type="submit" className="w-100 btn-login mb-4" style= {{ backgroundColor: '#f97316', border: 'none', fontSize: '1rem', padding: '10px' }}>
-                    Login →
+                  <Button
+                    type="submit"
+                    className="w-100 btn-login mb-4"
+                    disabled={loading}
+                    style={{ backgroundColor: '#f97316', border: 'none', fontSize: '1rem', padding: '10px' }}
+                  >
+                    {loading ? 'Logging in...' : 'Login →'}
                   </Button>
 
                   <div className="text-center text-tiny text-uppercase">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 
-const EditVideoModal = ({ show, handleClose, videoData, handleSave }) => {
+const EditVideoModal = ({ show, handleClose, videoData, formData, onChange, handleSave }) => {
   if (!videoData) return null;
 
   return (
@@ -15,7 +15,8 @@ const EditVideoModal = ({ show, handleClose, videoData, handleSave }) => {
             <Form.Label className="small fw-bold text-muted">Judul Video</Form.Label>
             <Form.Control 
               type="text" 
-              defaultValue={videoData.title} 
+              value={formData.title}
+              onChange={(e) => onChange('title', e.target.value)}
               className="py-2"
               style={{ borderRadius: '8px' }}
             />
@@ -25,7 +26,8 @@ const EditVideoModal = ({ show, handleClose, videoData, handleSave }) => {
             <Form.Control 
               as="textarea" 
               rows={3} 
-              defaultValue={videoData.description} 
+              value={formData.description}
+              onChange={(e) => onChange('description', e.target.value)}
               style={{ borderRadius: '8px', resize: 'none' }}
             />
           </Form.Group>
@@ -33,7 +35,8 @@ const EditVideoModal = ({ show, handleClose, videoData, handleSave }) => {
             <Form.Label className="small fw-bold text-muted">URL Embed</Form.Label>
             <Form.Control 
               type="text" 
-              defaultValue={videoData.url} 
+              value={formData.url}
+              onChange={(e) => onChange('url', e.target.value)}
               style={{ borderRadius: '8px' }}
             />
           </Form.Group>
